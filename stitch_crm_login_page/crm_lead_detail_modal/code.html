@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lead Details - Eleanor Vance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7b61ff",
+                        "background-light": "#f6f5f8",
+                        "background-dark": "#120f23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<!-- This is the main application background to showcase the sidebar -->
+<div class="h-screen w-full bg-gray-200 dark:bg-gray-800/50 p-8">
+<h1 class="text-3xl font-bold text-gray-800 dark:text-gray-200">Main Application Content</h1>
+<p class="text-gray-600 dark:text-gray-400 mt-2">The lead detail panel slides in over this content.</p>
+</div>
+<!-- Slide-In Sidebar -->
+<div class="group/design-root fixed inset-y-0 right-0 z-50 flex h-full w-[500px] flex-col overflow-y-auto bg-white dark:bg-background-dark shadow-2xl">
+<div class="flex h-full grow flex-col">
+<!-- Header -->
+<header class="sticky top-0 z-10 border-b border-gray-200 dark:border-white/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-sm p-4">
+<div class="flex items-center justify-between gap-4">
+<button class="p-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
+<span class="material-symbols-outlined">close</span>
+</button>
+<div class="flex items-center gap-2">
+<button class="p-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-white/10">
+<span class="material-symbols-outlined !text-xl">edit</span>
+</button>
+<button class="p-2 text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400 rounded-lg hover:bg-red-50 dark:hover:bg-red-500/10">
+<span class="material-symbols-outlined !text-xl">delete</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary px-4 text-sm font-medium leading-normal text-white hover:bg-primary/90">
+                            Convert
+                        </button>
+</div>
+</div>
+<div class="mt-3">
+<p class="text-[#121018] dark:text-white tracking-light text-[32px] font-bold leading-tight">Eleanor Vance</p>
+<div class="flex gap-2 pt-3 flex-wrap">
+<div class="flex h-7 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/10 px-3">
+<p class="text-primary text-xs font-medium leading-normal">Contacted</p>
+</div>
+<div class="flex h-7 shrink-0 items-center justify-center gap-x-2 rounded-full bg-green-100 dark:bg-green-500/20 px-3">
+<p class="text-green-800 dark:text-green-300 text-xs font-medium leading-normal">Active</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 p-4">
+<!-- Description List / Main Info Section -->
+<div class="grid grid-cols-2">
+<div class="flex flex-col gap-1 border-t border-solid border-gray-200 dark:border-white/10 py-4 pr-2">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Email</p>
+<p class="text-[#121018] dark:text-gray-200 text-sm font-normal leading-normal">eleanor.vance@example.com</p>
+</div>
+<div class="flex flex-col gap-1 border-t border-solid border-gray-200 dark:border-white/10 py-4 pl-2">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Phone</p>
+<p class="text-[#121018] dark:text-gray-200 text-sm font-normal leading-normal">+1-202-555-0174</p>
+</div>
+<div class="flex flex-col gap-1 border-t border-solid border-gray-200 dark:border-white/10 py-4 pr-2">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Company</p>
+<p class="text-[#121018] dark:text-gray-200 text-sm font-normal leading-normal">Innovate Inc.</p>
+</div>
+<div class="flex flex-col gap-1 border-t border-solid border-gray-200 dark:border-white/10 py-4 pl-2">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Source</p>
+<p class="text-[#121018] dark:text-gray-200 text-sm font-normal leading-normal">Website Form</p>
+</div>
+<div class="flex flex-col gap-1 border-t border-solid border-gray-200 dark:border-white/10 py-4 pr-2">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Deal Value</p>
+<p class="text-[#121018] dark:text-gray-200 text-sm font-normal leading-normal">$15,000</p>
+</div>
+<div class="flex flex-col gap-1 border-t border-solid border-gray-200 dark:border-white/10 py-4 pl-2">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Creation Date</p>
+<p class="text-[#121018] dark:text-gray-200 text-sm font-normal leading-normal">2024-05-10</p>
+</div>
+<div class="flex flex-col gap-1 border-t border-solid border-gray-200 dark:border-white/10 py-4 pr-2">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Last Activity</p>
+<p class="text-[#121018] dark:text-gray-200 text-sm font-normal leading-normal">2024-05-22</p>
+</div>
+<div class="flex flex-col gap-1 border-t border-solid border-gray-200 dark:border-white/10 py-4 pl-2">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Assigned To</p>
+<div class="flex items-center gap-2">
+<img class="h-6 w-6 rounded-full object-cover" data-alt="User avatar for Alex Williams" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALwjHcdQRjSeKHKqdOJ53X3rNFgRAsNpkk8rgJX6oLoQ3EHxIHBoijT-uxTxGWZjfU04f6rerkWGDLX-ONqgt2GFwXyqOcDw2SmKmddNVnk-whkuodvGGz4imKElOwT7jdMNiMs7GeidxtSdYviciQfT1hNWE8Lh7i6poGG5cdl0EBgJm9IfJu8B4x4a5bvaDJmjxrj4AVtjEu5QfgttV1JojbctGp1CkAN8T_4cz6RU6iT29WBuzuGzaZ_rN2r_2HUIHAPtdeXlCG"/>
+<p class="text-[#121018] dark:text-gray-200 text-sm font-normal leading-normal">Alex Williams</p>
+</div>
+</div>
+</div>
+<!-- Notes/Observations Section -->
+<div class="border-t border-gray-200 dark:border-white/10">
+<h2 class="text-[#121018] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5">Notes/Observations</h2>
+<div class="flex flex-col gap-3">
+<textarea class="w-full rounded-lg border border-gray-300 dark:border-white/20 bg-transparent px-3 py-2 text-sm text-[#121018] dark:text-gray-200 placeholder:text-gray-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50 dark:focus:border-primary" placeholder="Add a note about this lead..." rows="4"></textarea>
+<div class="flex justify-end">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-gray-100 dark:bg-white/10 px-4 text-sm font-medium leading-normal text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-white/20">
+                                Save
+                            </button>
+</div>
+</div>
+</div>
+<!-- Interaction History -->
+<div class="mt-6">
+<div class="flex justify-between items-center border-t border-gray-200 dark:border-white/10 pt-5 pb-3">
+<h2 class="text-[#121018] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">Interaction History</h2>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-gray-100 dark:bg-white/10 px-4 text-sm font-medium leading-normal text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-white/20">
+                            Add Note
+                        </button>
+</div>
+<div class="relative flex flex-col gap-6 pl-6 before:absolute before:left-0 before:top-0 before:h-full before:w-px before:bg-gray-200 dark:before:bg-white/10">
+<!-- Timeline Item 1 -->
+<div class="relative flex items-start gap-4">
+<div class="absolute -left-9 top-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary/10">
+<span class="material-symbols-outlined !text-sm text-primary">phone</span>
+</div>
+<div class="flex flex-col w-full">
+<p class="text-sm text-[#121018] dark:text-gray-200">Call logged</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">by Alex Williams</p>
+<p class="text-xs text-gray-400 dark:text-gray-500 mt-1">2 hours ago</p>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative flex items-start gap-4">
+<div class="absolute -left-9 top-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary/10">
+<span class="material-symbols-outlined !text-sm text-primary">mail</span>
+</div>
+<div class="flex flex-col w-full">
+<p class="text-sm text-[#121018] dark:text-gray-200">Email sent: "Following up on our call"</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">by Alex Williams</p>
+<p class="text-xs text-gray-400 dark:text-gray-500 mt-1">Yesterday</p>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative flex items-start gap-4">
+<div class="absolute -left-9 top-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary/10">
+<span class="material-symbols-outlined !text-sm text-primary">description</span>
+</div>
+<div class="flex flex-col w-full">
+<p class="text-sm text-[#121018] dark:text-gray-200">Note added: "Client is interested in the enterprise plan. Needs a demo next week."</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">by Sofia Reyes</p>
+<p class="text-xs text-gray-400 dark:text-gray-500 mt-1">May 20, 2024</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

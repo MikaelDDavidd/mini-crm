@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sign In - Modern CRM</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7b61ff",
+                        "background-light": "#f6f5f8",
+                        "background-dark": "#120f23",
+                        "custom-input-bg": "#F5F7FA",
+                        "custom-text-dark": "#1A1D29",
+                        "custom-placeholder": "#A0AEC0",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    ringColor: {
+                        'primary': '#7b61ff',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="antialiased">
+<div class="relative flex h-screen min-h-screen w-full flex-col items-center justify-center bg-gradient-to-b from-[#9C88FF] to-[#7B61FF] p-4 font-display">
+<div class="w-full max-w-sm rounded-xl bg-white p-6 shadow-lg sm:p-8">
+<div class="flex flex-col items-center space-y-6">
+<!-- Logo Component -->
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+<svg class="h-6 w-6 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<!-- HeadlineText Component -->
+<h1 class="text-custom-text-dark text-[32px] font-bold leading-tight tracking-tight text-center">Welcome Back</h1>
+<!-- Email TextField Component -->
+<div class="flex w-full flex-col">
+<label class="flex flex-col flex-1">
+<p class="text-custom-text-dark text-base font-medium leading-normal pb-2">Email Address</p>
+<div class="flex w-full flex-1 items-stretch rounded-lg">
+<div class="text-custom-placeholder flex border-none bg-custom-input-bg items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined" style="font-size: 24px;">mail</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-custom-text-dark focus:outline-0 focus:ring-2 focus:ring-primary border-none bg-custom-input-bg h-14 placeholder:text-custom-placeholder p-4 text-base font-normal leading-normal" placeholder="you@example.com" type="email" value=""/>
+</div>
+</label>
+</div>
+<!-- Password TextField Component -->
+<div class="flex w-full flex-col">
+<label class="flex flex-col flex-1">
+<p class="text-custom-text-dark text-base font-medium leading-normal pb-2">Password</p>
+<div class="flex w-full flex-1 items-stretch rounded-lg">
+<div class="text-custom-placeholder flex border-none bg-custom-input-bg items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined" style="font-size: 24px;">lock</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-custom-text-dark focus:outline-0 focus:ring-2 focus:ring-primary border-none bg-custom-input-bg h-14 placeholder:text-custom-placeholder p-4 text-base font-normal leading-normal" placeholder="Enter your password" type="password" value=""/>
+</div>
+</label>
+</div>
+<!-- ListItem (Checkbox and Link) Component -->
+<div class="flex w-full items-center justify-between">
+<div class="flex items-center gap-2">
+<input class="h-5 w-5 rounded border-gray-300 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-2 focus:ring-offset-2 focus:ring-primary" id="remember-me" type="checkbox"/>
+<label class="text-custom-text-dark text-base font-normal leading-normal" for="remember-me">Remember me</label>
+</div>
+<a class="text-primary text-base font-medium leading-normal hover:underline" href="#">Forgot Password?</a>
+</div>
+<!-- Button Component -->
+<button class="flex w-full h-14 items-center justify-center rounded-lg bg-primary text-white text-lg font-bold leading-normal transition-colors hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                    Sign In
+                </button>
+<!-- Footer Link -->
+<p class="text-center text-base text-gray-700">Don't have an account? <a class="font-medium text-primary hover:underline" href="#">Sign Up</a></p>
+</div>
+</div>
+</div>
+</body></html>
