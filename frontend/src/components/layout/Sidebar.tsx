@@ -25,11 +25,12 @@ export function Sidebar({ isOpen = false, onClose }: SidebarProps) {
   return (
     <aside
       className={cn(
-        'flex h-screen w-72 md:w-64 flex-shrink-0 flex-col border-r border-[#EAECF0] bg-white transition-transform duration-300 ease-in-out',
+        'flex h-[100dvh] w-72 md:w-64 flex-shrink-0 flex-col border-r border-[#EAECF0] bg-white transition-transform duration-300 ease-in-out',
         'lg:translate-x-0 lg:static',
         'fixed top-0 left-0 z-50',
         isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
       )}
+      style={{ height: '100dvh' }}
     >
       {/* Header - Fixed */}
       <div className="flex items-center justify-between p-4 border-b border-gray-200 flex-shrink-0">
@@ -78,7 +79,7 @@ export function Sidebar({ isOpen = false, onClose }: SidebarProps) {
       </nav>
 
       {/* Footer - Fixed at bottom */}
-      <div className="mt-auto border-t border-gray-200 p-4 flex-shrink-0">
+      <div className="mt-auto border-t border-gray-200 p-4 pb-safe flex-shrink-0" style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' }}>
         <div className="flex flex-col gap-2">
           <Link
             to="/settings"
