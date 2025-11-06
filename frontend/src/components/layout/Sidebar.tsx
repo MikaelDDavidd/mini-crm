@@ -31,6 +31,7 @@ export function Sidebar({ isOpen = false, onClose }: SidebarProps) {
         isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
       )}
     >
+      {/* Header - Fixed */}
       <div className="flex items-center justify-between p-4 border-b border-gray-200 flex-shrink-0">
         <div className="flex items-center gap-3">
           <div className="size-8 text-primary">
@@ -43,41 +44,41 @@ export function Sidebar({ isOpen = false, onClose }: SidebarProps) {
 
         <button
           onClick={onClose}
-          className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+          className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors touch-manipulation"
         >
           <X className="h-5 w-5 text-gray-600" />
         </button>
       </div>
 
-      <div className="flex-1 overflow-y-auto">
-        <nav className="flex flex-col gap-2 p-4">
-          {menuItems.map((item) => {
-            const Icon = item.icon
-            const isActive = location.pathname === item.path
+      {/* Main Navigation - Scrollable */}
+      <nav className="flex flex-col gap-2 p-4 overflow-y-auto">
+        {menuItems.map((item) => {
+          const Icon = item.icon
+          const isActive = location.pathname === item.path
 
-            return (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={handleLinkClick}
-                className={cn(
-                  'flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors touch-manipulation',
-                  isActive
-                    ? 'bg-primary/10 text-primary'
-                    : 'text-[#667085] hover:bg-gray-100'
-                )}
-              >
-                <Icon className={cn('h-6 w-6', isActive && 'text-primary')} />
-                <p className={cn('text-sm font-medium', isActive && 'font-semibold')}>
-                  {item.label}
-                </p>
-              </Link>
-            )
-          })}
-        </nav>
-      </div>
+          return (
+            <Link
+              key={item.path}
+              to={item.path}
+              onClick={handleLinkClick}
+              className={cn(
+                'flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors touch-manipulation',
+                isActive
+                  ? 'bg-primary/10 text-primary'
+                  : 'text-[#667085] hover:bg-gray-100'
+              )}
+            >
+              <Icon className={cn('h-6 w-6', isActive && 'text-primary')} />
+              <p className={cn('text-sm font-medium', isActive && 'font-semibold')}>
+                {item.label}
+              </p>
+            </Link>
+          )
+        })}
+      </nav>
 
-      <div className="border-t border-gray-200 p-4 flex-shrink-0">
+      {/* Footer - Fixed at bottom */}
+      <div className="mt-auto border-t border-gray-200 p-4 flex-shrink-0">
         <div className="flex flex-col gap-2">
           <Link
             to="/settings"
