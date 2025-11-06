@@ -172,11 +172,7 @@ export default function ImportLeads() {
               </div>
             )}
 
-            {state === 'idle' && (
-              <FileUpload onFileSelect={handleFileSelect} />
-            )}
-
-            {state === 'file-selected' && selectedFile && (
+            {(state === 'idle' || state === 'file-selected') && (
               <FileUpload onFileSelect={handleFileSelect} />
             )}
 

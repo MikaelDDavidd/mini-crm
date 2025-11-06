@@ -45,28 +45,28 @@ export function KanbanColumn({
   }
 
   return (
-    <div className="flex flex-col h-full min-w-[300px] w-[300px]">
-      <div className="flex items-center justify-between mb-4">
+    <div className="flex flex-col w-full md:min-w-[320px] md:w-[320px]">
+      <div className="flex items-center justify-between mb-3 px-1">
         <div className="flex items-center gap-2">
-          <span className={cn('px-2 py-1 rounded-md text-sm font-semibold', statusColors[status])}>
+          <span className={cn('px-3 py-1.5 rounded-lg text-sm font-semibold', statusColors[status])}>
             {LEAD_STATUS_LABELS[status]}
           </span>
-          <span className="text-[#667085] text-sm font-medium">
+          <span className="text-[#667085] text-sm font-semibold">
             {leads.length}
           </span>
         </div>
 
         <button
           onClick={() => onAddLead?.(status)}
-          className="flex items-center gap-1 text-[#667085] hover:text-primary text-sm font-medium transition-colors"
+          className="flex items-center gap-1.5 text-[#667085] hover:text-primary text-sm font-medium transition-colors px-2 py-1 hover:bg-gray-50 rounded-lg"
         >
           <Plus className="h-4 w-4" />
-          Add Lead
+          <span className="hidden sm:inline">Add Lead</span>
         </button>
       </div>
 
       <div
-        className="flex-1 bg-[#F9FAFB] rounded-lg p-3 space-y-3 overflow-y-auto min-h-[500px]"
+        className="bg-[#F9FAFB] rounded-xl p-3 space-y-3 overflow-y-auto min-h-[200px] md:min-h-[500px]"
         onDragOver={handleDragOver}
         onDrop={handleDrop}
       >

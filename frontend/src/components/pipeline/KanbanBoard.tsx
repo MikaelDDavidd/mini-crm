@@ -62,20 +62,22 @@ export function KanbanBoard({ leads, onLeadClick, onAddLead }: KanbanBoardProps)
   }
 
   return (
-    <div className="flex flex-col md:flex-row gap-6 md:overflow-x-auto pb-4">
-      {PIPELINE_STATUSES.map((status) => (
-        <KanbanColumn
-          key={status}
-          status={status}
-          leads={leadsByStatus[status] || []}
-          onDragStart={handleDragStart}
-          onDragOver={handleDragOver}
-          onDrop={handleDrop}
-          onLeadClick={onLeadClick}
-          onAddLead={onAddLead}
-          draggingLeadId={draggingLeadId}
-        />
-      ))}
+    <div className="md:overflow-x-auto md:-mx-6 md:px-6 pb-4">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-6 md:min-w-max">
+        {PIPELINE_STATUSES.map((status) => (
+          <KanbanColumn
+            key={status}
+            status={status}
+            leads={leadsByStatus[status] || []}
+            onDragStart={handleDragStart}
+            onDragOver={handleDragOver}
+            onDrop={handleDrop}
+            onLeadClick={onLeadClick}
+            onAddLead={onAddLead}
+            draggingLeadId={draggingLeadId}
+          />
+        ))}
+      </div>
     </div>
   )
 }
