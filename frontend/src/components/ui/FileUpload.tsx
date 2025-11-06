@@ -1,4 +1,5 @@
-import { FC, useRef, useState, DragEvent, ChangeEvent } from 'react'
+import { useRef, useState } from 'react'
+import type { FC, DragEvent, ChangeEvent } from 'react'
 import { CloudUpload, X, FileText } from 'lucide-react'
 import { cn } from '@/lib/utils'
 

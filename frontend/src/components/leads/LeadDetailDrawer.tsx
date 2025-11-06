@@ -64,8 +64,8 @@ export function LeadDetailDrawer({ lead, isOpen, onClose, onEdit }: LeadDetailDr
     }).format(value)
   }
 
-  const getStatusColor = (status: string) => {
-    const colors: Record<string, string> = {
+  const getStatusColor = (status: string): 'default' | 'success' | 'warning' | 'error' | 'info' | 'purple' | 'gray' => {
+    const colors: Record<string, 'default' | 'success' | 'warning' | 'error' | 'info' | 'purple' | 'gray'> = {
       new: 'purple',
       contacted: 'default',
       qualified: 'warning',

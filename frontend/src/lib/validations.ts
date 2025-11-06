@@ -42,12 +42,9 @@ export const leadSchema = z.object({
   phone: z.string().optional().or(z.literal('')),
   company: z.string().optional().or(z.literal('')),
   status: z.enum(['new', 'contacted', 'qualified', 'proposal', 'negotiation', 'won', 'lost']),
-  source: z.string().min(1, 'Please select a source').refine(
-    (val) => ['website', 'referral', 'social_media', 'ad_campaign', 'cold_call', 'other'].includes(val),
-    { message: 'Please select a valid source' }
-  ),
+  source: z.enum(['website', 'referral', 'social_media', 'ad_campaign', 'cold_call', 'other']),
   priority: z.enum(['high', 'normal', 'low']),
-  deal_value: z.coerce.number().min(0, 'Deal value must be positive').default(0),
+  deal_value: z.coerce.number().min(0, 'Deal value must be positive'),
   notes: z.string().optional().or(z.literal('')),
   tags: z.string().optional().or(z.literal('')),
 })

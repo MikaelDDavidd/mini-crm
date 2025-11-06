@@ -73,7 +73,7 @@ export default function ImportLeads() {
     const formData = new FormData()
     formData.append('file', selectedFile)
 
-    let progressInterval: NodeJS.Timeout | null = null
+    let progressInterval: number | null = null
 
     try {
       progressInterval = setInterval(() => {
@@ -127,7 +127,7 @@ export default function ImportLeads() {
   }
 
   return (
-    <AppLayout>
+    <AppLayout title="Import Leads">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-wrap justify-between gap-3 pb-8">
           <h1 className="text-4xl font-black text-gray-900">Import Leads from Spreadsheet</h1>

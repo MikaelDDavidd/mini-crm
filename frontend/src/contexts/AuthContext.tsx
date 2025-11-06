@@ -90,7 +90,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
 
     console.log('SignUp Success:', data)
-    return data
   }
 
   async function signOut() {

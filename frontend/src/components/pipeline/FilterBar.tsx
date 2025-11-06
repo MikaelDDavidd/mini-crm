@@ -1,4 +1,4 @@
-import { Search, Calendar, User, Plus, X } from 'lucide-react'
+import { Search, Plus, X } from 'lucide-react'
 import { Select } from '@/components/ui/Select'
 import { Button } from '@/components/ui/Button'
 import { type LeadStatus, type LeadSource, LEAD_STATUS_LABELS, LEAD_SOURCE_LABELS } from '@/types'

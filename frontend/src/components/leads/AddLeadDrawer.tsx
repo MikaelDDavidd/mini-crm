@@ -28,19 +28,16 @@ export function AddLeadDrawer({ isOpen, onClose, defaultStatus = 'new', lead }: 
   const updateLead = useUpdateLead()
   const isEditMode = !!lead
 
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<LeadFormData>({
-    resolver: zodResolver(leadSchema),
+  const form = useForm<LeadFormData>({
+    resolver: zodResolver(leadSchema) as any,
     defaultValues: {
       status: defaultStatus,
       priority: 'normal',
       deal_value: 0,
     },
   })
+
+  const { register, handleSubmit, reset, formState: { errors } } = form
 
   useEffect(() => {
     if (lead && isOpen) {
@@ -116,7 +113,7 @@ export function AddLeadDrawer({ isOpen, onClose, defaultStatus = 'new', lead }: 
 
   return (
     <Drawer isOpen={isOpen} onClose={handleClose} title={isEditMode ? "Edit Lead" : "Add New Lead"} size="lg">
-      <form onSubmit={handleSubmit(onSubmit)} className="p-6 space-y-6">
+      <form onSubmit={handleSubmit(onSubmit as any)} className="p-6 space-y-6">
         <Input
           label="Name *"
           type="text"

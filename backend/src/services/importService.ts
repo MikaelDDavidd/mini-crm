@@ -141,8 +141,8 @@ export const importLeads = async (
     } catch (error) {
       console.log(`Row ${rowNumber} validation failed:`, error)
       if (error instanceof z.ZodError) {
-        const firstError = error.errors?.[0]
-        console.log('Zod error details:', error.errors)
+        const firstError = error.issues?.[0]
+        console.log('Zod error details:', error.issues)
         errors.push({
           row: rowNumber,
           description: firstError?.message || 'Validation error',

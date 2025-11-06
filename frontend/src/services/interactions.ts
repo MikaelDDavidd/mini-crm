@@ -1,5 +1,5 @@
 import { supabase } from '@/lib/supabase'
-import { LeadInteraction, InteractionType } from '@/types'
+import type { LeadInteraction, InteractionType } from '@/types'
 
 export interface CreateInteractionData {
   lead_id: string

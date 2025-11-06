@@ -14,7 +14,7 @@ const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:5174',
   process.env.CORS_ORIGIN,
-].filter(Boolean)
+].filter(Boolean) as string[]
 
 const io = new Server(httpServer, {
   cors: {
@@ -28,7 +28,7 @@ app.use(cors({
 }))
 app.use(express.json())
 
-app.get('/health', (req, res) => {
+app.get('/health', (_req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() })
 })
 
