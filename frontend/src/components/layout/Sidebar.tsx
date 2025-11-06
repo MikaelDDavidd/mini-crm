@@ -31,56 +31,54 @@ export function Sidebar({ isOpen = false, onClose }: SidebarProps) {
         isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
       )}
     >
-      <div className="flex flex-col h-full overflow-y-auto">
-        <div className="flex-1 flex flex-col justify-between p-4 pb-6">
-        <div className="flex flex-col gap-4">
-          <div className="flex items-center justify-between p-2">
-            <div className="flex items-center gap-3">
-              <div className="size-8 text-primary">
-                <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
-                </svg>
-              </div>
-              <h1 className="text-[#101828] text-lg font-bold leading-normal">CRM Co.</h1>
-            </div>
-
-            {/* Close button - only visible on mobile */}
-            <button
-              onClick={onClose}
-              className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
-            >
-              <X className="h-5 w-5 text-gray-600" />
-            </button>
+      <div className="flex items-center justify-between p-4 border-b border-gray-200 flex-shrink-0">
+        <div className="flex items-center gap-3">
+          <div className="size-8 text-primary">
+            <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+            </svg>
           </div>
-
-          <nav className="flex flex-col gap-2 mt-4">
-            {menuItems.map((item) => {
-              const Icon = item.icon
-              const isActive = location.pathname === item.path
-
-              return (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  onClick={handleLinkClick}
-                  className={cn(
-                    'flex items-center gap-3 rounded-lg px-3 py-2 transition-colors',
-                    isActive
-                      ? 'bg-primary/10 text-primary'
-                      : 'text-[#667085] hover:bg-gray-100'
-                  )}
-                >
-                  <Icon className={cn('h-6 w-6', isActive && 'text-primary')} />
-                  <p className={cn('text-sm font-medium', isActive && 'font-semibold')}>
-                    {item.label}
-                  </p>
-                </Link>
-              )
-            })}
-          </nav>
+          <h1 className="text-[#101828] text-lg font-bold leading-normal">CRM Co.</h1>
         </div>
 
-        <div className="flex flex-col gap-2 mt-4 border-t border-gray-200 pt-4">
+        <button
+          onClick={onClose}
+          className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+        >
+          <X className="h-5 w-5 text-gray-600" />
+        </button>
+      </div>
+
+      <div className="flex-1 overflow-y-auto">
+        <nav className="flex flex-col gap-2 p-4">
+          {menuItems.map((item) => {
+            const Icon = item.icon
+            const isActive = location.pathname === item.path
+
+            return (
+              <Link
+                key={item.path}
+                to={item.path}
+                onClick={handleLinkClick}
+                className={cn(
+                  'flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors touch-manipulation',
+                  isActive
+                    ? 'bg-primary/10 text-primary'
+                    : 'text-[#667085] hover:bg-gray-100'
+                )}
+              >
+                <Icon className={cn('h-6 w-6', isActive && 'text-primary')} />
+                <p className={cn('text-sm font-medium', isActive && 'font-semibold')}>
+                  {item.label}
+                </p>
+              </Link>
+            )
+          })}
+        </nav>
+      </div>
+
+      <div className="border-t border-gray-200 p-4 flex-shrink-0">
+        <div className="flex flex-col gap-2">
           <Link
             to="/settings"
             onClick={handleLinkClick}
@@ -106,7 +104,6 @@ export function Sidebar({ isOpen = false, onClose }: SidebarProps) {
             <p className="text-sm font-medium">Log Out</p>
           </button>
         </div>
-      </div>
       </div>
     </aside>
   )
