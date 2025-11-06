@@ -25,13 +25,14 @@ export function Sidebar({ isOpen = false, onClose }: SidebarProps) {
   return (
     <aside
       className={cn(
-        'flex h-screen w-64 flex-shrink-0 flex-col border-r border-[#EAECF0] bg-white overflow-y-auto transition-transform duration-300 ease-in-out',
+        'flex h-screen w-72 md:w-64 flex-shrink-0 flex-col border-r border-[#EAECF0] bg-white transition-transform duration-300 ease-in-out',
         'lg:translate-x-0 lg:static',
         'fixed top-0 left-0 z-50',
         isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
       )}
     >
-      <div className="flex h-full flex-col justify-between p-4">
+      <div className="flex flex-col h-full overflow-y-auto">
+        <div className="flex-1 flex flex-col justify-between p-4 pb-6">
         <div className="flex flex-col gap-4">
           <div className="flex items-center justify-between p-2">
             <div className="flex items-center gap-3">
@@ -79,12 +80,12 @@ export function Sidebar({ isOpen = false, onClose }: SidebarProps) {
           </nav>
         </div>
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-2 mt-4 border-t border-gray-200 pt-4">
           <Link
             to="/settings"
             onClick={handleLinkClick}
             className={cn(
-              'flex items-center gap-3 rounded-lg px-3 py-2 transition-colors',
+              'flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors touch-manipulation',
               location.pathname === '/settings'
                 ? 'bg-primary/10 text-primary'
                 : 'text-[#667085] hover:bg-gray-100'
@@ -99,12 +100,13 @@ export function Sidebar({ isOpen = false, onClose }: SidebarProps) {
               handleLinkClick()
               signOut()
             }}
-            className="flex items-center gap-3 rounded-lg px-3 py-2 text-[#667085] hover:bg-gray-100 w-full"
+            className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-[#667085] hover:bg-red-50 hover:text-red-600 w-full transition-colors touch-manipulation"
           >
             <LogOut className="h-6 w-6" />
             <p className="text-sm font-medium">Log Out</p>
           </button>
         </div>
+      </div>
       </div>
     </aside>
   )
